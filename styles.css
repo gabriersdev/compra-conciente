@@ -1,35 +1,16 @@
 body {
-        font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            }
+  font-family: 'Inter', Arial, sans-serif;
+  background-color: #f4f4f4;
+}
 
-            h1, p {
-                color: #333;
-                }
+h1,
+p {
+  color: #333;
+}
 
-                .container {
-                    background: #fff;
-                        padding: 30px;
-                            border-radius: 10px;
-                                box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-                                }
-
-                                .btn-primary {
-                                    background-color: #5cb85c;
-                                        border: none;
-                                        }
-
-                                        .alert {
-                                            font-size: 1.2rem;
-                                            }
-
-                                            .alert-danger {
-                                                background-color: #f44336;
-                                                    color: white;
-                                                    }
-
-                                                    .alert-success {
-                                                        background-color: #4caf50;
-                                                            color: white;
-                                                            }
+.container {
+  background: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
 }

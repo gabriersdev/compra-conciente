@@ -1,36 +1,46 @@
 // Função para verificar respostas e determinar resultado
-document.getElementById('questionnaire').addEventListener('submit', function(e) {
-    e.preventDefault();
-        
-            const q1 = document.getElementById('q1').value;
-                const q2 = document.getElementById('q2').value;
-                    const q3 = document.getElementById('q3').value;
-                        const q4 = document.getElementById('q4').value;
-                            const q5 = document.getElementById('q5').value;
-                                
-                                    let score = 0;
+document.getElementById('questionnaire').addEventListener('submit', function (e) {
+  e.preventDefault();
 
-                                        // Contabilizando respostas
-                                            if (q1 === 'necessidade') score += 1;
-                                                if (q2 === 'frequente') score += 1;
-                                                    if (q3 === 'sim') score += 1;
-                                                        if (q4 === 'planejado') score += 1;
-                                                            if (q5 === 'sim') score += 1;
+  const responses = [
+    document.getElementById('q1').value,
+    document.getElementById('q2').value,
+    document.getElementById('q3').value,
+    document.getElementById('q4').value,
+    document.getElementById('q5').value,
+    document.getElementById('q6').value,
+    document.getElementById('q7').value,
+    document.getElementById('q8').value,
+    document.getElementById('q9').value,
+  ];
 
-                                                                // Exibir resultado
-                                                                    const resultDiv = document.getElementById('result');
-                                                                        resultDiv.classList.remove('d-none');
+  let score = 0;
 
-                                                                            if (score >= 4) {
-                                                                                    resultDiv.classList.remove('alert-danger');
-                                                                                            resultDiv.classList.add('alert-success');
-                                                                                                    resultDiv.innerHTML = "Essa parece ser uma compra necessária. Vá em frente!";
-                                                                                                        } else {
-                                                                                                                resultDiv.classList.remove('alert-success');
-                                                                                                                        resultDiv.classList.add('alert-danger');
-                                                                                                                                resultDiv.innerHTML = "Cuidado! Isso pode ser consumismo.";
-                                                                                                                                    }
-                                                                                                                                    });
+  // Contabilizando respostas
+  if (responses[0] === 'necessidade') score += 1; // Pergunta 1
+  if (responses[1] === 'frequente') score += 1; // Pergunta 2
+  if (responses[2] === 'sim') score += 1; // Pergunta 3
+  if (responses[3] === 'nao') score -= 1; // Pergunta 4
+  if (responses[4] === 'nao') score -= 1; // Pergunta 5
+  if (responses[5] === 'nao') score -= 1; // Pergunta 6
+  if (responses[6] === 'sim') score -= 1; // Pergunta 7
+  if (responses[7] === 'sim') score += 1; // Pergunta 8
+  if (responses[8] === 'sim') score -= 1; // Pergunta 9
 
-                                                                                                                                    // Inicializar AOS
-                                                                                                                                    AOS.init();
+  // Exibir resultado
+  const resultDiv = document.getElementById('result');
+  resultDiv.classList.remove('d-none');
+
+  if (score >= 5) {
+    resultDiv.classList.remove('alert-danger');
+    resultDiv.classList.add('alert-success');
+    resultDiv.innerHTML = "Essa parece ser uma compra necessária. Vá em frente!";
+  } else {
+    resultDiv.classList.remove('alert-success');
+    resultDiv.classList.add('alert-danger');
+    resultDiv.innerHTML = "Cuidado! Isso pode ser consumismo.";
+  }
+});
+
+// Inicializar AOS
+AOS.init();

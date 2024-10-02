@@ -1,73 +1,120 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
+
+  <head>
     <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>Questionário: Compra Necessária ou Consumismo?</title>
-                <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-                    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
-                        <link rel="stylesheet" href="styles.css">
-                        </head>
-                        <body>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compra Consciente</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Import Font Inter -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap">
+  </head>
 
-                            <div class="container mt-5">
-                                    <h1 class="text-center" data-aos="fade-up">Você realmente precisa comprar isso?</h1>
-                                            <p class="text-center" data-aos="fade-up" data-aos-delay="100">Responda ao questionário abaixo para descobrir!</p>
+  <body>
 
-                                                    <form id="questionnaire" class="my-5" data-aos="fade-up" data-aos-delay="200">
-                                                                <!-- Pergunta 1 -->
-                                                                            <div class="mb-4">
-                                                                                            <label class="form-label">Esta compra é realmente necessária ou você quer apenas por desejo?</label>
-                                                                                                            <select class="form-select" id="q1">
-                                                                                                                                <option value="necessidade">É uma necessidade</option>
-                                                                                                                                                    <option value="desejo">É um desejo</option>
-                                                                                                                                                                    </select>
-                                                                                                                                                                                </div>
-                                                                                                                                                                                            
-                                                                                                                                                                                                        <!-- Pergunta 2 -->
-                                                                                                                                                                                                                    <div class="mb-4">
-                                                                                                                                                                                                                                    <label class="form-label">Com que frequência você usará esse item?</label>
-                                                                                                                                                                                                                                                    <select class="form-select" id="q2">
-                                                                                                                                                                                                                                                                        <option value="frequente">Usarei frequentemente</option>
-                                                                                                                                                                                                                                                                                            <option value="raro">Usarei raramente</option>
-                                                                                                                                                                                                                                                                                                            </select>
-                                                                                                                                                                                                                                                                                                                        </div>
-                                                                                                                                                                                                                                                                                                                                    
-                                                                                                                                                                                                                                                                                                                                                <!-- Pergunta 3 -->
-                                                                                                                                                                                                                                                                                                                                                            <div class="mb-4">
-                                                                                                                                                                                                                                                                                                                                                                            <label class="form-label">Você tem condições financeiras de fazer esta compra sem comprometer seu orçamento?</label>
-                                                                                                                                                                                                                                                                                                                                                                                            <select class="form-select" id="q3">
-                                                                                                                                                                                                                                                                                                                                                                                                                <option value="sim">Sim, tenho condições</option>
-                                                                                                                                                                                                                                                                                                                                                                                                                                    <option value="nao">Não, vai comprometer meu orçamento</option>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                    </select>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                </div>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <!-- Pergunta 4 -->
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    <div class="mb-4">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    <label class="form-label">Você está comprando por impulso ou após planejar e pesquisar sobre o item?</label>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    <select class="form-select" id="q4">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <option value="planejado">Foi planejado e pesquisado</option>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <option value="impulso">Estou comprando por impulso</option>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            </select>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        </div>
+    <!-- TODO: Add. margin lateral em res. menores -->
+    <div class="container my-5">
+      <h1 class="text-center" data-aos="fade-up">Você realmente precisa comprar isso?</h1>
+      <p class="text-center" data-aos="fade-up" data-aos-delay="100">Responda ao questionário abaixo para
+        descobrir!</p>
 
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    <!-- Pergunta 5 -->
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <div class="mb-4">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <label class="form-label">Esse produto tem qualidade e durabilidade para ser um bom investimento?</label>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <select class="form-select" id="q5">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    <option value="sim">Sim, é um bom investimento</option>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <option value="nao">Não, é de baixa qualidade</option>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        </select>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    </div>
+      <form id="questionnaire" class="my-5" data-aos="fade-up" data-aos-delay="200">
+        <!-- Pergunta 1 -->
+        <div class="mb-4">
+          <label class="form-label">Esta compra é realmente necessária ou você quer apenas por desejo?</label>
+          <select class="form-select" id="q1" autofocus>
+            <option value="necessidade">É uma necessidade</option>
+            <option value="desejo">É um desejo</option>
+          </select>
+        </div>
 
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <button type="submit" class="btn btn-primary">Ver Resultado</button>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        </form>
+        <!-- Pergunta 2 -->
+        <div class="mb-4">
+          <label class="form-label">Com que frequência você usará esse item?</label>
+          <select class="form-select" id="q2">
+            <option value="frequente">Usarei frequentemente</option>
+            <option value="raro">Usarei raramente</option>
+          </select>
+        </div>
 
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <!-- Div para exibir o resultado -->
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <div id="result" class="alert d-none mt-4"></div>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            </div>
+        <!-- Pergunta 3 -->
+        <div class="mb-4">
+          <label class="form-label">Você tem condições financeiras de fazer esta compra sem comprometer seu
+            orçamento?</label>
+          <select class="form-select" id="q3">
+            <option value="sim">Sim, tenho condições</option>
+            <option value="nao">Não, vai comprometer meu orçamento</option>
+          </select>
+        </div>
 
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    <script src="script.js"></script>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    </body>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    </html>
+        <!-- Pergunta 4 -->
+        <div class="mb-4">
+          <label class="form-label">Você está comprando para impressionar alguém?</label>
+          <select class="form-select" id="q4">
+            <option value="sim">Sim</option>
+            <option value="nao">Não</option>
+          </select>
+        </div>
+
+        <!-- Pergunta 5 -->
+        <div class="mb-4">
+          <label class="form-label">Você já possui algo semelhante?</label>
+          <select class="form-select" id="q5">
+            <option value="sim">Sim</option>
+            <option value="nao">Não</option>
+          </select>
+        </div>
+
+        <!-- Pergunta 6 -->
+        <div class="mb-4">
+          <label class="form-label">A compra é influenciada por promoções ou descontos?</label>
+          <select class="form-select" id="q6">
+            <option value="sim">Sim</option>
+            <option value="nao">Não</option>
+          </select>
+        </div>
+
+        <!-- Pergunta 7 -->
+        <div class="mb-4">
+          <label class="form-label">Você se sentiu pressionado a comprar por causa de uma tendência
+            atual?</label>
+          <select class="form-select" id="q7">
+            <option value="sim">Sim</option>
+            <option value="nao">Não</option>
+          </select>
+        </div>
+
+        <!-- Pergunta 8 -->
+        <div class="mb-4">
+          <label class="form-label">Você considera se o item será útil a longo prazo?</label>
+          <select class="form-select" id="q8">
+            <option value="sim">Sim</option>
+            <option value="nao">Não</option>
+          </select>
+        </div>
+
+        <!-- Pergunta 9 -->
+        <div class="mb-4">
+          <label class="form-label">Você costuma comprar mais do que realmente precisa em uma única
+            vez?</label>
+          <select class="form-select" id="q9">
+            <option value="sim">Sim</option>
+            <option value="nao">Não</option>
+          </select>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Ver Resultado</button>
+      </form>
+
+      <!-- Div para exibir o resultado -->
+      <!-- TODO - Usar AOS -->
+      <div id="result" class="alert d-none mt-4"></div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="script.js"></script>
+  </body>
+
+</html>
