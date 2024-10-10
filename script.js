@@ -2,6 +2,9 @@
 document.getElementById('questionnaire').addEventListener('submit', function (e) {
   e.preventDefault();
 
+  // Remove alerta anterior
+  document.querySelectorAll('.alert').forEach(alert => alert.remove());
+
   const responses = [];
 
   document.querySelectorAll('.form-select').forEach(select => {
@@ -23,16 +26,26 @@ document.getElementById('questionnaire').addEventListener('submit', function (e)
   if (responses[7] === 'sim') score += 1;  // Pensar no longo prazo é positivo
   if (responses[8] === 'sim') score -= 1;  // Comprar em excesso indica consumismo
 
-  console.log(score);
+  // Criar div
+  const [resultDiv, alertHeader, alertBody] = [document.createElement('div'), document.createElement('div'), document.createElement('div')];
+  resultDiv.classList.add('alert', 'alert-dismissible', 'fade', 'hide', 'mt-5');
+  alertHeader.classList.add('alert-heading');
+  alertHeader.innerHTML = `<span class="fw-semibold">Resultado:</span><button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>`;
+  alertBody.classList.add('alert-content');
+
+  // Adicionar divs a resultDiv e ao body
+  resultDiv.appendChild(alertHeader);
+  resultDiv.appendChild(alertBody);
+  document.body.querySelector('main').appendChild(resultDiv);
 
   // Exibir resultado
-  const resultDiv = document.getElementById('result');
-  resultDiv.classList.remove('d-none');
+  const [_, content] = resultDiv.children;
+  resultDiv.classList.remove('hide');
 
-  if (score <= 5) {
+  if (score >= 5) {
     resultDiv.classList.remove('alert-danger');
     resultDiv.classList.add('alert-success');
-    resultDiv.innerHTML = `
+    content.innerHTML = `
     <strong>Essa parece ser uma compra necessária. Vá em frente!</strong>
 
     <div class="my-2">
@@ -64,7 +77,7 @@ document.getElementById('questionnaire').addEventListener('submit', function (e)
   } else {
     resultDiv.classList.remove('alert-success');
     resultDiv.classList.add('alert-danger');
-    resultDiv.innerHTML = `
+    content.innerHTML = `
     <strong>Cuidado! Isso pode ser consumismo.</strong>
 
     <div class="my-2">
@@ -96,12 +109,16 @@ document.getElementById('questionnaire').addEventListener('submit', function (e)
       </div>`;
   }
 
+  resultDiv.classList.add('show');
+
   // Scroll até o resultado
   window.scrollTo({
-    top: resultDiv.offsetTop,
+    // 16px == 1rem de alívio
+    top: resultDiv.offsetTop - 16,
     behavior: 'smooth'
   });
 });
 
 // Inicializar AOS
 AOS.init();
+

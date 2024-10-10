@@ -1,12 +1,16 @@
+:root {
+  --font-size: 1rem;
+}
+
 body {
   font-family: 'Inter', Arial, sans-serif;
   padding: 1rem;
+  font-size: var(--font-size);
 }
 
 .container {
   padding: 1rem;
   border-radius: 10px;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
 }
 
 dl,
@@ -14,4 +18,26 @@ ol,
 ul {
   margin-top: 0;
   margin-bottom: 0;
+}
+
+.form-controls {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  gap: 3rem;
+  margin-bottom: 3rem;
+
+  @media screen and (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.form-control-x {
+  min-height: 75px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  .form-label {
+    color: var(--bs-emphasis-color);
+  }
 }
